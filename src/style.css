@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 1.5em;
+}
+
+.App{
+    display: grid;
+    grid-template-columns: 23% 45% 32% ;
+}
+.LeftSideBar{
+    border-right: 1px solid rgb(239,243,244);
+    padding:10px 0px 0 50px;
+}
+.LeftSideBarLinks{
+    display: flex;
+    flex-direction: row;
+    align-items: center; 
+    margin: 30px 0 15px 0;
+    padding: 0;   
+}
+.LeftSideBarLinks h3{
+    font-weight: 300;
+    font-size: 0.9em;
+    margin:0;
+    margin-left: 20px;
+}
+#twitterIcon{
+    color: #1D9BF0;
+    font-size: 1.4em;
+}
+.tweetButtonLeftSideBar{
+    Background-color: #1D9BF0;
+    color:white;
+    border: none;
+    padding:15px 80px;
+    border-radius: 40px;
+    font-weight: 400;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+.Main{
+    border-right: 1px solid rgb(239,243,244);
+}
+.Post{
+    border: 1px solid rgb(239,243,244);
+    padding:10px 20px 0 20px;
+}
+#tweetButtonPost{
+    Background-color: #1D9BF0;
+    color:white;
+    border: none;
+    padding:10px 20px;
+    border-radius: 40px;
+    font-weight: 400;
+    font-size: 0.6em;
+}
+#home{
+    font-size: 0.9em;
+    margin: 0;
+}
+#wandIcon{
+    font-size: 0.9em;
+}
+.postHome{
+    display: flex;
+    justify-content: space-between;
+}
+
+.postTextArea{
+    display: grid;
+    margin-top: 25px;
+
+}
+#profilePic{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    grid-column: 1 ;
+    grid-row: 1 /span 2;
+}
+#homeTextArea{
+    border: none;
+    /* border-bottom: 1px solid rgb(239,243,244); */
+    grid-column: 2/ span 10 ;
+    grid-row: 1 ;
+    height:50px;
+    font-size: 0.9em;
+}
+.subIcons{
+    display: flex;
+    grid-column:2/ span 10 ;
+    grid-row: 2 ;
+    justify-content: space-between;
+    align-items: center;
+   margin: 0;
+}
+.homeSubIcons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 50%;
+}
+.homeSubIcons > .postIcon{
+    color: #1D9BF0;
+    font-size: 0.7em;
+}
