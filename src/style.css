@@ -19,7 +19,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center; 
-    margin: 30px 0 15px 0;
+    margin: 25px 0 15px 0;
     padding: 0;   
 }
 .LeftSideBarLinks h3{
@@ -36,11 +36,34 @@ body{
     Background-color: #1D9BF0;
     color:white;
     border: none;
-    padding:15px 80px;
+    padding:12px 80px;
     border-radius: 40px;
     font-weight: 400;
     font-size: 0.9em;
     margin-top: 10px;
+}
+.profileInfo{
+    display: grid;
+    margin-top:25px;
+}
+.profileInfoPic{
+    grid-column: 1 ;
+}
+.displayProfileInfo{
+    grid-column: 2 ;   
+}
+.profileInfoDots{
+    grid-column: 3;
+    align-self: center;
+}
+#profileName{
+    margin:0;
+    font-size: 0.7em;
+}
+#profileId{
+    margin:0;
+    font-size: 0.6em;
+    color:#5B6B78
 }
 .Main{
     border-right: 1px solid rgb(239,243,244);
@@ -50,7 +73,7 @@ body{
     padding:10px 20px 0 20px;
 }
 #tweetButtonPost{
-    Background-color: #1D9BF0;
+    Background-color: #8ECDF8;
     color:white;
     border: none;
     padding:10px 20px;
@@ -62,7 +85,7 @@ body{
     font-size: 0.9em;
     margin: 0;
 }
-#wandIcon{
+#sparkleIcon{
     font-size: 0.9em;
 }
 .postHome{
@@ -73,22 +96,24 @@ body{
 .postTextArea{
     display: grid;
     margin-top: 25px;
-
+    margin-bottom: 20px;
 }
-#profilePic{
+.profilePic{
     height: 40px;
     width: 40px;
     border-radius: 50%;
+   
+}
+.profileMainPic{
     grid-column: 1 ;
     grid-row: 1 /span 2;
 }
 #homeTextArea{
     border: none;
-    /* border-bottom: 1px solid rgb(239,243,244); */
     grid-column: 2/ span 10 ;
     grid-row: 1 ;
     height:50px;
-    font-size: 0.9em;
+    font-size: 1.3em;
 }
 .subIcons{
     display: flex;
@@ -96,14 +121,51 @@ body{
     grid-row: 2 ;
     justify-content: space-between;
     align-items: center;
-   margin: 0;
+    margin: 0;
 }
 .homeSubIcons{
     display: flex;
     justify-content: space-evenly;
-    width: 50%;
+    width: 40%;
 }
 .homeSubIcons > .postIcon{
     color: #1D9BF0;
-    font-size: 0.7em;
+    font-size: 0.9em;
+}
+.RightSideBar{
+    border-left: 1px solid rgb(239,243,244);
+    padding:8px 45px 0 30px;
+}
+.search{
+    width: 95%;
+    background-color: #EFF3F4;
+    padding: 8px 15px ;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+}
+input{
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+}
+input::placeholder{
+    font-size: 0.65em;
+    color: #536471; 
+}
+#searchIcon{
+    color: #536471;
+    font-size: 0.8em;
+    margin-right: 20px;
+}
+.WhatsHappening{
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+    background-color: #F7F9F9;
+    border-radius: 30px;
+    padding-left: 20px;
+}
+.WhatsHappening h5{
+    padding-top:20px;
 }

@@ -1,50 +1,53 @@
 import LeftSideBarLinks from "./LeftSideBarLinks"
-import { nanoid } from "nanoid";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHashtag, faHouse, faBell, faUser, faAnglesRight, faNoteSticky } from "@fortawesome/free-solid-svg-icons";
-import { faBookmark, faEnvelope } from "@fortawesome/free-regular-svg-icons";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-
-
+import profilePic from "./profilePic.jpg"
+import { nanoid } from "nanoid"
+import { FaTwitter } from "react-icons/fa"
+import {AiOutlineHome, AiOutlineUser} from "react-icons/ai"
+import {BiHash, BiDotsHorizontalRounded} from "react-icons/bi"
+import {VscBell} from "react-icons/vsc"
+import {FiMail} from "react-icons/fi"
+import {BsBookmark} from "react-icons/bs"
+import {RiFileList2Line} from "react-icons/ri"
+import {HiOutlineDotsCircleHorizontal} from "react-icons/hi"
 const LinksArr=[
     {
         id:nanoid(),
-        logo:<FontAwesomeIcon icon={faHouse} />,
+        logo:<AiOutlineHome />,
         title:"Home"
     },
     {
         id:nanoid(),
-        logo:<FontAwesomeIcon icon={faHashtag} />,
+        logo:<BiHash />,
         title:"Explore"
     },
     {
       id:nanoid(),
-      logo:<FontAwesomeIcon icon={faBell} />,
+      logo:<VscBell />,
       title:"Notification"
     },
     {
       id:nanoid(),
-      logo:<FontAwesomeIcon icon={faEnvelope} />,
+      logo:<FiMail />,
       title:"Messages"
     },
     {
       id:nanoid(),
-      logo:<FontAwesomeIcon icon={faBookmark} />,
+      logo:<BsBookmark />,
       title:"Bookmarks"
     },
     {
       id:nanoid(),
-      logo:<FontAwesomeIcon icon={faNoteSticky} />,
+      logo:<RiFileList2Line />,
       title:"Lists"
     },
     {
       id:nanoid(),
-      logo:<FontAwesomeIcon icon={faUser} />,
+      logo:<AiOutlineUser />,
       title:"Profile"
     },
     {
       id:nanoid(),
-      logo:<FontAwesomeIcon icon={faAnglesRight} />,
+      logo:<HiOutlineDotsCircleHorizontal />,
       title:"More"
     }
     
@@ -60,9 +63,17 @@ export default function LeftSidebar() {
 
     return (
       <section className="LeftSideBar">
-        <FontAwesomeIcon id="twitterIcon" icon={faTwitter} />
+        <FaTwitter id="twitterIcon" />
         {displayLinkList}
         <button className="tweetButtonLeftSideBar">Tweet</button>
+        <div className="profileInfo"> 
+          <img className="profilePic profileInfoPic" src={profilePic} alt="profile pic"></img>
+          <div className="displayProfileInfo">
+            <h5 id="profileName">Gagan Preet 👩‍💻</h5>
+            <p id="profileId">@i_gaganpreet</p>
+          </div>
+          <BiDotsHorizontalRounded className="profileInfoDots"/>
+        </div>
       </section>
     );
   }
