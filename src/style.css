@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
 
+
+
+
 body{
     margin: 0;
     padding: 0;
@@ -68,7 +71,7 @@ body{
 .Main{
     border-right: 1px solid rgb(239,243,244);
 }
-.Post{
+.MyPost{
     border: 1px solid rgb(239,243,244);
     padding:10px 20px 0 20px;
 }
@@ -168,4 +171,96 @@ input::placeholder{
 }
 .WhatsHappening h5{
     padding-top:20px;
+}
+
+
+.DisplayUserPosts{
+    display: grid;
+    border-bottom: 1px solid rgb(239,243,244);
+    padding:10px 20px 0 20px;
+    width: 100%;
+}
+
+.authorImg{
+    height: 40px;
+    width:40px;
+    border-radius: 50%;
+    grid-column: 1;
+    grid-row: 1/span 2;
+}
+.authorInfo{
+    grid-column: 2/ span 10;
+    grid-row: 1;
+    display: flex;
+    padding-left: 10px;
+}
+.authorName,
+.authorProfile,
+.profileInfoDots,
+.postTime{
+    align-self:top;
+    margin:0;
+    margin-right: 0.5em;
+}
+.displayPostContent{
+    grid-column: 2/ span 8;
+    grid-row: 2;
+    padding-left: 10px;
+    margin:0;
+    font-size: 0.7em;
+    max-width: 100%;
+}
+.postStats{
+    display: flex;
+    grid-column: 2/ span 10;
+    grid-row: 3;
+    padding-left:10px;
+    justify-content: space-between;
+    width: 80%;
+}
+.authorName{
+    font-size: 0.75em;
+}
+.authorProfile, 
+.postTime{
+    color:#50575c;
+    font-size: 0.7em;
+    font-weight: 300;
+}
+.profileInfoDots{
+    color:#50575c;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+.postStats{
+    display: flex;
+}
+.retweetIcon{
+    transform: rotate(90deg);
+}
+.retweetIcon,
+.commentIcon,
+.likeIcon,
+.shareIcon{
+    padding: 0 10px;
+}
+.postStatsIcons{
+    display: flex;
+    font-weight: 300;
+    font-size: 0.7em;
+    color:#50575c;
+    align-items: center;
+}
+.postImage{
+    height: 90%;
+    width: 90%;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+.postContent{
+    margin:5px 0;
+    font-weight: 300;
+    font-size: 1em;
 }

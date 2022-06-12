@@ -15,17 +15,17 @@ let subIcons=[
 
 let HomeSubIcons= subIcons.map((icon)=>icon)
 
-export default function Post() {
+export default function MyPost() {
     return (
 
-      <section className="Post">
+      <section className="MyPost">
         <div className="postHome">
           
           <h3 id="home">Home</h3>
           <HiOutlineSparkles id="sparkleIcon" />
         </div>
         <div className="postTextArea">
-          <img className="profilePic profileMainPic" src={profilePic} alt="profile pic"></img>
+          <img className="profilePic profileMainPic" src="https://pbs.twimg.com/profile_images/1423650543382142985/dCDFouI1_400x400.jpg" alt="profile pic"></img>
           <input id="homeTextArea" type="textarea" placeholder="What's happening?"></input> 
           <div className="subIcons">
             <div className="homeSubIcons">{HomeSubIcons}</div>
