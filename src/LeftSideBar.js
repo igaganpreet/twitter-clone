@@ -1,5 +1,4 @@
 import LeftSideBarLinks from "./LeftSideBarLinks"
-import profilePic from "./profilePic.jpg"
 import { nanoid } from "nanoid"
 import { FaTwitter } from "react-icons/fa"
 import {AiOutlineHome, AiOutlineUser} from "react-icons/ai"
@@ -9,63 +8,85 @@ import {FiMail} from "react-icons/fi"
 import {BsBookmark} from "react-icons/bs"
 import {RiFileList2Line} from "react-icons/ri"
 import {HiOutlineDotsCircleHorizontal} from "react-icons/hi"
+import React from "react"
 
 
 
-const LinksArr=[
+
+export default function LeftSidebar() {
+
+  const [LinksArr, setLinksArr]=React.useState([
     {
         id:nanoid(),
         logo:<AiOutlineHome />,
-        title:"Home"
+        title:"Home",
+        isSelected:true
     },
     {
         id:nanoid(),
         logo:<BiHash />,
-        title:"Explore"
+        title:"Explore",
+        isSelected:false
     },
     {
       id:nanoid(),
       logo:<VscBell />,
-      title:"Notification"
+      title:"Notification",
+      isSelected:false
     },
     {
       id:nanoid(),
       logo:<FiMail />,
-      title:"Messages"
+      title:"Messages",
+      isSelected:false
     },
     {
       id:nanoid(),
       logo:<BsBookmark />,
-      title:"Bookmarks"
+      title:"Bookmarks",
+      isSelected:false
     },
     {
       id:nanoid(),
       logo:<RiFileList2Line />,
-      title:"Lists"
+      title:"Lists",
+      isSelected:false
     },
     {
       id:nanoid(),
       logo:<AiOutlineUser />,
-      title:"Profile"
+      title:"Profile",
+      isSelected:false
     },
     {
       id:nanoid(),
       logo:<HiOutlineDotsCircleHorizontal />,
-      title:"More"
+      title:"More",
+      isSelected:false
     }
     
-]
+  ])
 
-export default function LeftSidebar() {
-  let displayLinkList=LinksArr.map(
-      item=> 
-            <LeftSideBarLinks title={item.title} 
-            logo={item.logo} 
-            key={item.id} />
-            )
+const [displayLinkList,setDisplayLinkList]=React.useState(setLinkEl(LinksArr))
+
+    function setLinkEl(arr){
+     return(arr.map(
+        item=> 
+              <LeftSideBarLinks title={item.title} 
+              logo={item.logo} 
+              isSelected={item.isSelected}
+              key={item.id}
+              clicked={linkClicked} />
+              )
+     )
+    }
+ function linkClicked()
+{
+  console.log("clicked")
+} 
     return (
       <section className="LeftSideBar">
-        <FaTwitter id="twitterIcon" />
+        <span><FaTwitter id="twitterIcon" /></span>
         {displayLinkList}
         <button className="tweetButtonLeftSideBar">Tweet</button>
         <div className="profileInfo"> 

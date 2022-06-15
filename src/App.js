@@ -11,6 +11,7 @@ function App() {
       <LeftSidebar />
       <Main />
       <RightSideBar />
+      {/* <div className="messages">Messages</div> */}
     </div>
   );
 }

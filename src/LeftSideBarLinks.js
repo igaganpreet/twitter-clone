@@ -1,9 +1,13 @@
 
 export default function LeftSidebarLinks(props) {
+
+  
+  let styles=props.isSelected?{fontWeight:"600"}:{fontWeight:"300"}
+
     return (
-      <div className="LeftSideBarLinks">
+      <span className="LeftSideBarLinks" onClick={()=>props.clicked(props.title)}>
         {props.logo}
-        <h3>{props.title}</h3>
-      </div>
+        <h3 style={styles} >{props.title}</h3>
+      </span>
     );
   }

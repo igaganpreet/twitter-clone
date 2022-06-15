@@ -1,13 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap');
 
 
-
+*:focus {
+    outline: 0;
+}
 
 body{
     margin: 0;
     padding: 0;
     font-family: 'Roboto Flex', sans-serif;
     font-size: 1.5em;
+    user-select:none;
 }
 
 .App{
@@ -16,24 +19,36 @@ body{
 }
 .LeftSideBar{
     border-right: 1px solid rgb(239,243,244);
-    padding:10px 0px 0 50px;
+    padding-left:30px;
 }
 .LeftSideBarLinks{
     display: flex;
     flex-direction: row;
     align-items: center; 
-    margin: 25px 0 15px 0;
-    padding: 0;   
+    padding: 13px 20px 13px 20px;
+    width: max-content;
+    font-weight: 500;
+}
+.LeftSideBarLinks:hover{
+    cursor: pointer;
+    background-color:#E7E7E8;
+    border-radius: 40px;
 }
 .LeftSideBarLinks h3{
-    font-weight: 300;
     font-size: 0.9em;
     margin:0;
     margin-left: 20px;
 }
 #twitterIcon{
     color: #1D9BF0;
-    font-size: 1.4em;
+    font-size: 1.25em;
+    margin: 0;
+    padding: 10px;
+}
+#twitterIcon:hover{
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #E8F5FD;
 }
 .tweetButtonLeftSideBar{
     Background-color: #1D9BF0;
@@ -42,12 +57,25 @@ body{
     padding:12px 80px;
     border-radius: 40px;
     font-weight: 400;
-    font-size: 0.9em;
+    font-size: 0.8em;
     margin-top: 10px;
+    
 }
+.tweetButtonLeftSideBar:hover{
+    cursor: pointer;
+    background-color: #1A8CD8;
+}
+
 .profileInfo{
     display: grid;
-    margin-top:25px;
+    margin-top:15px;
+    padding: 15px 20px 15px 20px;
+    
+}
+.profileInfo:hover{
+    cursor: pointer;
+    background-color:#E7E7E8;
+    border-radius: 40px;
 }
 .profileInfoPic{
     grid-column: 1 ;
@@ -84,12 +112,22 @@ body{
     font-weight: 400;
     font-size: 0.6em;
 }
+
 #home{
     font-size: 0.9em;
     margin: 0;
 }
+#home:hover{
+    cursor: pointer;
+}
 #sparkleIcon{
     font-size: 0.9em;
+    padding: 10px;
+    border-radius: 50%;
+}
+#sparkleIcon:hover{
+    background-color:#E7E7E8;
+    cursor: pointer;
 }
 .postHome{
     display: flex;
@@ -98,30 +136,59 @@ body{
 
 .postTextArea{
     display: grid;
-    margin-top: 25px;
     margin-bottom: 20px;
 }
 .profilePic{
     height: 40px;
     width: 40px;
     border-radius: 50%;
-   
+}
+.profilePic:hover{
+    cursor: pointer;
 }
 .profileMainPic{
     grid-column: 1 ;
     grid-row: 1 /span 2;
+}
+.everyoneReply{
+    grid-column: 2/ span 10 ;
+    grid-row: 2 ;
+    color: #1D9BF0;
+    font-size: 0.6em;
+    font-weight: 700;
+    padding:2px 10px;
+    letter-spacing: -0.05em;
+    width: fit-content;
+    border-radius: 40px;
+}
+.everyoneReply:hover{
+    background-color: #E1EEF6;
+    cursor: pointer;
+}
+
+.earthIcon{
+    padding-right: 5px;
 }
 #homeTextArea{
     border: none;
     grid-column: 2/ span 10 ;
     grid-row: 1 ;
     height:50px;
-    font-size: 1.3em;
+    font-size: 0.9em;
+    font-weight: 100;
 }
+#homeTextArea::placeholder{
+    font-size: 0.9em;
+}
+#homeTextArea:focus{
+    outline: 0;
+}
+
+
 .subIcons{
     display: flex;
     grid-column:2/ span 10 ;
-    grid-row: 2 ;
+    grid-row: 3 ;
     justify-content: space-between;
     align-items: center;
     margin: 0;
@@ -129,11 +196,18 @@ body{
 .homeSubIcons{
     display: flex;
     justify-content: space-evenly;
-    width: 40%;
+    width: 60%;
 }
 .homeSubIcons > .postIcon{
     color: #1D9BF0;
     font-size: 0.9em;
+    padding: 10px;
+    border-radius: 50%;
+    /* border:2px solid red */
+}
+.postIcon:hover{
+    background-color: #E1EEF6;
+    cursor: pointer;
 }
 .RightSideBar{
     border-left: 1px solid rgb(239,243,244);
@@ -180,6 +254,9 @@ input::placeholder{
     padding:10px 20px 0 20px;
     width: 100%;
 }
+.DisplayUserPosts:hover{
+    cursor: pointer;
+}
 
 .authorImg{
     height: 40px;
@@ -201,6 +278,7 @@ input::placeholder{
     align-self:top;
     margin:0;
     margin-right: 0.5em;
+    
 }
 .displayPostContent{
     grid-column: 2/ span 8;
@@ -244,7 +322,8 @@ input::placeholder{
 .commentIcon,
 .likeIcon,
 .shareIcon{
-    padding: 0 10px;
+    padding: 10px 10px;
+    border-radius: 50%;   
 }
 .postStatsIcons{
     display: flex;
@@ -263,4 +342,29 @@ input::placeholder{
     margin:5px 0;
     font-weight: 300;
     font-size: 1em;
+}
+
+.postCommentIcon:hover .commentIcon,
+.postShareIcon:hover .shareIcon{
+    background-color: #E1EEF6;
+    color:#6DBDF2;  
+}
+.postCommentIcon:hover p{
+    color:#6DBDF2;
+}
+.postRetweetIcon:hover .retweetIcon{
+    background-color: #DEF1EB;
+    color:#1EC18B;
+    
+}
+.postRetweetIcon:hover p{
+    color:#1EC18B;
+}
+.postLikeIcon:hover .likeIcon{
+    background-color: #F7E0EB;
+    color:#F8519E;
+    
+}
+.postLikeIcon:hover p{
+    color:#F8519E;
 }

@@ -1,14 +1,59 @@
+import React from "react"
 import {BiDotsHorizontalRounded} from "react-icons/bi"
-import {FaRegComment,FaRegHeart } from "react-icons/fa"
+import {FaRegComment,FaRegHeart,FaHeart } from "react-icons/fa"
 import {FiShare} from "react-icons/fi"
 import {MdOutlineRepeat} from "react-icons/md"
 export default function DisplayUserPosts(props) {
       
-      let postImage=<img className="postImage" src={props.imageUrl}></img>
-      
-    return (
+
+let [like,setLikeCount]=React.useState({
+                                        likeCount:props.likeCount,
+                                        isLiked:false
+                                      })
+let [retweet,setRetweetCount]=React.useState({
+                                        retweetCount:props.retweetCount,
+                                        isRetweeted:false
+                                      })
+
+let postImage=<img className="postImage" src={props.imageUrl}></img>
+let commentCount=props.commentCount
+let likeStyle=like.isLiked ? {color:"#F8519E"}:{color:"#50575c"}
+let retweetStyle=retweet.isRetweeted ? {color:"#1EC18B"}:{color:"#50575c"}
+
+
+function handleLiked(){
+      if(like.isLiked===true){
+        setLikeCount((prevVal)=>{
+          return(
+            {
+              likeCount:prevVal.likeCount-1,
+              isLiked:!prevVal.isLiked
+            }
+          )
+        })
+      }
+      else{
+        setLikeCount((prevVal)=>{
+          return(
+            {
+              likeCount:prevVal.likeCount+1,
+              isLiked:!prevVal.isLiked
+            }
+          )
+        })
+      }
+    }
+
+function handleRetweeted(){
+    retweet.isRetweeted ?
+      setRetweetCount((prevVal)=>{return({retweetCount:prevVal.retweetCount-1, isRetweeted:!prevVal.isRetweeted})}):
+      setRetweetCount((prevVal)=>{return({retweetCount:prevVal.retweetCount+1, isRetweeted:!prevVal.isRetweeted})})
+    }
+
+
+return (
       <div className="DisplayUserPosts">
-            <img className="authorImg" src={props.authorImg} alt="author image"></img>
+            <img className="authorImg" src={props.authorImg} alt="author"></img>
             <div className="authorInfo">
               <h5 className="authorName">{props.authorName}</h5>
               <p className="authorProfile">{props.authorProfile}</p>
@@ -23,19 +68,19 @@ export default function DisplayUserPosts(props) {
 
 
             <div className="postStats">
-              <div className="postStatsIcons">
+              <div className="postStatsIcons postCommentIcon">
                 <FaRegComment className="commentIcon" />
-                <p>{props.commentCount}</p>
+                <p>{commentCount}</p>
               </div>
-              <div className="postStatsIcons">
-                <MdOutlineRepeat className="retweetIcon" />
-                <p>{props.retweetCount}</p>
+              <div className="postStatsIcons postRetweetIcon" onClick={handleRetweeted}>
+                <MdOutlineRepeat className="retweetIcon" style={retweetStyle} />
+                <p style={retweetStyle}>{retweet.retweetCount}</p>
               </div>
-              <div className="postStatsIcons">
-                <FaRegHeart className="likeIcon" />
-                <p>{props.likeCount}</p>
+              <div className="postStatsIcons postLikeIcon" onClick={handleLiked}>
+                {like.isLiked?<FaHeart style={{color:"#F8519E"}} className="likeIcon" />:<FaRegHeart className="likeIcon" />}
+                <p style={likeStyle}>{like.likeCount}</p>
               </div>
-              <div className="postStatsIcons">
+              <div className="postStatsIcons postShareIcon">
                 <FiShare className="shareIcon" />
               </div>
             </div>
