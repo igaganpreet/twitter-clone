@@ -6,6 +6,8 @@ import MessageExpand from "./MessageExpand";
 import MessageData from "./MessageData";
 
 export default function Messages() {
+
+let width = window.innerWidth;
 let data=MessageData.data
 
  let display=data.map((item)=>{
@@ -23,6 +25,7 @@ let data=MessageData.data
 
 const [viewPopUp,setPopUp]=React.useState(false)
 const [expandMessage,setExpandMessage]=React.useState(false)
+
 function togglePopUp(){
   console.log("clicked")
   setPopUp((prev)=>!prev)
@@ -31,12 +34,13 @@ function toggleExpandMessage(){
   console.log("clicked")
   setExpandMessage((prev)=>!prev)
 }
+
 let MessageHeight=expandMessage?{height:"80vh", overflowY:"scroll"}:{height:"9vh",overflowY:"hidden"}
 let ArrowIcon= expandMessage?
                 <BsChevronDoubleDown className="messageIcon messageExpandIcon" onClick={toggleExpandMessage} /> :
                 <BsChevronDoubleUp className="messageIcon messageExpandIcon" onClick={toggleExpandMessage} />
 
-
+if(width>480){
   return (
     <div className="Messages" style={MessageHeight}>
       <div className="messageInner">
@@ -51,4 +55,14 @@ let ArrowIcon= expandMessage?
     </div>
   );
 }
+else{
+  return (
+    <div className="Messages">
+        {display} 
+    </div>
+  );
+}
+  
+}
+
 

@@ -3,6 +3,7 @@ import {BiDotsHorizontalRounded} from "react-icons/bi"
 import {FaRegComment,FaRegHeart,FaHeart } from "react-icons/fa"
 import {FiShare} from "react-icons/fi"
 import {MdOutlineRepeat} from "react-icons/md"
+
 export default function DisplayUserPosts(props) {
       
 

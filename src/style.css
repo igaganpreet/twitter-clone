@@ -11,6 +11,7 @@ body{
     font-family: 'Roboto Flex', sans-serif;
     font-size: 1.5em;
     user-select:none;
+    background-color: white;
 }
 
 .App{
@@ -243,7 +244,6 @@ body{
     font-size: 0.9em;
     padding: 10px;
     border-radius: 50%;
-    /* border:2px solid red */
 }
 .postIcon:hover{
     background-color: #E1EEF6;
@@ -581,3 +581,77 @@ input::placeholder{
     margin:0;
     padding:0 10px;
 }
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+    body {
+      /* background-color: lightgreen; */
+    width: 100%;
+    }
+
+    .App{
+        display: grid;
+        grid-template-rows: 4% 92% 4% ;
+        overflow-x: hidden;
+        /* width: 100%; */
+    }
+    .Header{
+        position: absolute;
+        top:0;
+        height: 4%;
+        width: calc(100% - 40px);
+        display: flex;
+        padding:10px 20px;
+        background-color: white;
+        border-bottom: 1px solid rgb(239,243,244);
+
+    }
+    .Header>img{
+        height: 100%;
+        width: calc(height);
+    }
+    .Header>h5{
+        margin:0;
+        margin-left:1em;
+        align-self: center;
+    }
+    .Header > .sparkleIcon{
+margin-left: auto;
+    }
+    .Footer{
+        position: fixed;
+        bottom:0;
+        height: 4%;
+        width: calc(100% - 60px);
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        padding:10px 30px;
+        border-top: 1px solid rgb(239,243,244);
+
+    }
+    .Main{
+        margin-top: 70%;
+    }
+    .DisplayUserPosts{
+        padding:10px 10px 0 20px;
+        width: calc(100vw - 30px);
+    }
+    .Messages{
+        height:100vh;
+        width:100vw;
+        position:relative;
+        box-shadow: none;
+        padding: 10px;
+        margin-top:70%;
+        border-radius: none;
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        overflow-x: hidden;
+    }
+  }

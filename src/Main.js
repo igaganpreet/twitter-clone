@@ -21,11 +21,20 @@ export default function Main() {
             imageUrl={data.imageUrl} />
     )
 })
-
-    return (
-      <main className="Main">
-        <MyPost />
-        {display}
-      </main>
-    )
-  }
+let width = window.innerWidth;
+if(width>480){
+  return (
+    <main className="Main">
+      <MyPost />
+      {display}
+    </main>
+  )
+}
+else{
+  return (
+    <main className="Main">
+      {display}
+    </main>
+  )
+}
+}
