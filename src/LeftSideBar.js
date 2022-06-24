@@ -1,4 +1,5 @@
 import LeftSideBarLinks from "./LeftSideBarLinks"
+import DisplayProfile from "./DisplayProfile"
 import { nanoid } from "nanoid"
 import { FaTwitter } from "react-icons/fa"
 import {AiOutlineHome, AiOutlineUser} from "react-icons/ai"
@@ -86,15 +87,15 @@ const [displayLinkList,setDisplayLinkList]=React.useState(setLinkEl(LinksArr))
 } 
     return (
       <section className="LeftSideBar">
-        <span><FaTwitter id="twitterIcon" /></span>
+        <span><FaTwitter className="twitterIcon" /></span>
         {displayLinkList}
         <button className="tweetButtonLeftSideBar">Tweet</button>
         <div className="profileInfo"> 
-          <img className="profilePic profileInfoPic" src="https://pbs.twimg.com/profile_images/1423650543382142985/dCDFouI1_400x400.jpg" alt="profile pic"></img>
-          <div className="displayProfileInfo">
-            <h5 id="profileName">Baljeet Singh</h5>
-            <p id="profileId">@yetanotherdev_</p>
-          </div>
+          <DisplayProfile 
+            image="https://pbs.twimg.com/profile_images/1423650543382142985/dCDFouI1_400x400.jpg"
+            name="Baljeet Singh"
+            userId="@yetanotherdev_"
+          />
           <BiDotsHorizontalRounded className="profileInfoDots"/>
         </div>
       </section>

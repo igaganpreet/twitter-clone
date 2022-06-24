@@ -37,16 +37,16 @@ export default function MyPost() {
       <section className="MyPost">
         <div className="postHome">
           
-          <h3 id="home">Home</h3>
-          <HiOutlineSparkles id="sparkleIcon" />
+          <h3 className="home">Home</h3>
+          <HiOutlineSparkles className="sparkleIcon" />
         </div>
         <div className="postTextArea">
           <img className="profilePic profileMainPic" src="https://pbs.twimg.com/profile_images/1423650543382142985/dCDFouI1_400x400.jpg" alt="profile pic"></img>
-          <input id="homeTextArea" type="textarea" onChange={handleChange} onClick={handleClick} placeholder="What's happening?"></input> 
+          <input className="homeTextArea" type="textarea" onChange={handleChange} onClick={handleClick} placeholder="What's happening?"></input> 
           <span className="everyoneReply" style={isClicked?{visibility:"visible"}:{visibility:"hidden"}}><GiEarthAmerica className="earthIcon" />Everyone can reply</span>
           <div className="subIcons">
             <div className="homeSubIcons">{HomeSubIcons}</div>
-            <button style={buttonColor} id="tweetButtonPost">Tweet</button>
+            <button style={buttonColor} className="tweetButtonPost">Tweet</button>
           </div>
         </div>
         

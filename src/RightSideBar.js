@@ -6,7 +6,7 @@ export default function RightSidebar() {
     return (
       <div className="RightSideBar">
         <div className="search">
-          <FiSearch id="searchIcon" />
+          <FiSearch className="searchIcon" />
           <input placeholder="Search Twitter"></input>
         </div>
         <WhatsHappening />

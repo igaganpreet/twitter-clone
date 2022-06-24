@@ -1,7 +1,7 @@
 import LeftSidebar from "./LeftSideBar";
 import RightSideBar from "./RightSideBar";
 import Main from "./Main";
-// import Messages from "./Messages";
+import Messages from "./Messages";
 
 
 
@@ -11,7 +11,7 @@ function App() {
       <LeftSidebar />
       <Main />
       <RightSideBar />
-      {/* <Messages />   */}
+      <Messages />  
     </div>
   );
 }

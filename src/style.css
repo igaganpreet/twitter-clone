@@ -17,31 +17,43 @@ body{
     display: grid;
     grid-template-columns: 23% 45% 32% ;
 }
-/* .Messages{
+
+.Messages{
     position:fixed;
-    width: 25%;
-    padding: 15px 20px;
+    width: 30%;
     box-shadow: 0px 0.5px 9px 0px rgb(214, 212, 214);
     bottom:0px;
     right:15px;
     border-radius: 20px 20px 0 0;
     background-color: #FFFFFF;
-    display:flexbox;
-    flex-direction: row;
-}
-.Messages>p{
-    margin:0;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
     
 }
-.newMessageIcon{
-  
+.messageInner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
-
-.messageExpandIcon{
-       
-} */
-
+.Messages:hover{
+    cursor: pointer;
+}
+.messageInner>p{
+    margin:0;
+    padding: 15px;
+    width: max-content;   
+}
+.messageIconLeft{
+    margin-left: auto;
+}
+.messageIcon{
+    padding: 10px;
+    border-radius: 50%;
+}
+.messageIcon:hover{
+    background-color:#E7E7E8;
+}
 
 .LeftSideBar{
     border-right: 1px solid rgb(239,243,244);
@@ -65,13 +77,13 @@ body{
     margin:0;
     margin-left: 20px;
 }
-#twitterIcon{
+.twitterIcon{
     color: #1D9BF0;
     font-size: 1.25em;
     margin: 0;
     padding: 10px;
 }
-#twitterIcon:hover{
+.twitterIcon:hover{
     cursor: pointer;
     border-radius: 50%;
     background-color: #E8F5FD;
@@ -93,10 +105,12 @@ body{
 }
 
 .profileInfo{
-    display: grid;
+    display: flex;
     margin-top:15px;
     padding: 15px 20px 15px 20px;
-    
+}
+.displayProfile{
+    display: grid;
 }
 .profileInfo:hover{
     cursor: pointer;
@@ -105,22 +119,24 @@ body{
 }
 .profileInfoPic{
     grid-column: 1 ;
+    margin-right:8px;
 }
 .displayProfileInfo{
-    grid-column: 2 ;   
+    grid-column: 2/ span 100 ;   
 }
 .profileInfoDots{
-    grid-column: 3;
     align-self: center;
 }
-#profileName{
+.profileName{
     margin:0;
     font-size: 0.7em;
+    width: max-content;
 }
-#profileId{
+.profileId{
     margin:0;
     font-size: 0.6em;
-    color:#5B6B78
+    color:#5B6B78;
+    width: max-content;
 }
 .Main{
     border-right: 1px solid rgb(239,243,244);
@@ -129,7 +145,7 @@ body{
     border: 1px solid rgb(239,243,244);
     padding:10px 20px 0 20px;
 }
-#tweetButtonPost{
+.tweetButtonPost{
     
     color:white;
     border: none;
@@ -139,19 +155,19 @@ body{
     font-size: 0.6em;
 }
 
-#home{
+.home{
     font-size: 0.9em;
     margin: 0;
 }
-#home:hover{
+.home:hover{
     cursor: pointer;
 }
-#sparkleIcon{
+.sparkleIcon{
     font-size: 0.9em;
     padding: 10px;
     border-radius: 50%;
 }
-#sparkleIcon:hover{
+.sparkleIcon:hover{
     background-color:#E7E7E8;
     cursor: pointer;
 }
@@ -195,7 +211,7 @@ body{
 .earthIcon{
     padding-right: 5px;
 }
-#homeTextArea{
+.homeTextArea{
     border: none;
     grid-column: 2/ span 10 ;
     grid-row: 1 ;
@@ -203,14 +219,12 @@ body{
     font-size: 0.9em;
     font-weight: 100;
 }
-#homeTextArea::placeholder{
+.homeTextArea::placeholder{
     font-size: 0.9em;
 }
-#homeTextArea:focus{
+.homeTextArea:focus{
     outline: 0;
 }
-
-
 .subIcons{
     display: flex;
     grid-column:2/ span 10 ;
@@ -256,7 +270,7 @@ input::placeholder{
     font-size: 0.65em;
     color: #536471; 
 }
-#searchIcon{
+.searchIcon{
     color: #536471;
     font-size: 0.8em;
     margin-right: 20px;
@@ -437,4 +451,133 @@ input::placeholder{
     height: 80%;
     width: 80%;
     border-radius: 10px;
+}
+.NewMessagePopup{
+    height: 100vh;
+    width:100%;
+    position: fixed;
+    background: #00000050;
+    top:0;
+    left:0;
+}
+.popupBox{
+    position: relative;
+    background-color: #ffffff;
+    width: 45%;
+    height: 85%;
+    max-height: 90vh;
+    border-radius: 15px 15px 15px 15px;
+    margin: 0 auto;
+    padding: 15px 0 15px 15px;
+    margin-top: calc(100vh - 90vh - 20px);
+}
+
+.popup-top{
+    display: flex;
+    padding-right: 20px;
+}
+.popup-top>h5{
+    margin: 0;
+    margin-left: 7%;
+    align-self: center;
+}
+.popup-top>button{
+    margin-left: auto;
+    background-color: #878A8C;
+    color:white;
+    border: none;
+    padding:8px 20px;
+    
+    border-radius: 40px;
+    font-weight: 400;
+    font-size: 0.6em;
+}
+.closeIcon{
+    padding: 5px;
+    border-radius: 50%;
+}   
+.closeIcon:hover{
+    background-color:#E7E7E8;
+}
+.popup-search{
+    margin-top: 10px;
+    padding:10px;
+    border-bottom: 1px solid rgb(239,243,244);
+}
+.popup-search:hover{
+    background-color: F7F9F9;
+    cursor: pointer;
+}
+.popup-search>input{
+    padding-left: 20px;
+}
+.popup-searchIcon{
+    color: #1D9BF0;
+    font-size: 0.8em;
+   
+}
+.popup-group{
+    padding: 15px 0;
+    border-bottom: 1px solid rgb(239,243,244);
+    display: flex;
+}
+.popup-group:hover{
+    background-color: #F7F9F9;
+}
+.popup-group>h6{
+    margin: 0;
+    color: #1D9BF0;
+    align-self:center;
+    padding: 0 10px
+}
+.groupIcon{
+    border:1px solid #b5b6b6;
+    border-radius: 50%;
+    color:#1D9BF0;
+    padding: 8px;
+    font-size: 0.9em;
+}
+.groupIcon:hover{
+    cursor: pointer;
+    background-color:#E1F0F8;
+}
+.popupUsers{
+    overflow-y: scroll;
+    height: 59vh;
+}
+.popup-displayProfile{
+    padding: 10px 0;
+}
+.popup-displayProfile:hover{
+    cursor: pointer;
+    background-color:#E7E7E8;
+}
+.MessageExpand{
+    display: grid;
+    padding: 10px;
+}
+.MessageExpand:hover{
+    background-color: #F7F9F9;
+}
+.MessageExpandPic{
+    grid-row:1/ span 2;
+    grid-column: 1;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+.MessageExpandInfo{
+    grid-row:1;
+    grid-column: 2 / span 100;
+    display: flex;
+    padding:0 10px;
+}
+.MessageExpandInfo > p{
+    padding-left:5px;
+}
+.MessageExpandMsg{
+    grid-row:2;
+    grid-column: 2 / span 100;
+    margin:0;
+    padding:0 10px;
 }
