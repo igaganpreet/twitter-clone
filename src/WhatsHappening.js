@@ -7,6 +7,7 @@ export default function WhatsHappening() {
   const whData=whatsHappeningData.data
   const displayWH=whData.map((item)=>{
       return <DisplayWhatsHappening 
+                key={item.id}
                 id={item.id}
                 info={item.info}
                 title={item.title}

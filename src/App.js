@@ -5,6 +5,7 @@ import Messages from "./Messages";
 import Header from "./Header";
 import Footer from "./Footer";
 import React from "react"
+import DisplayNotification from "./DisplayNotification";
 function App() {
 
   let width = window.innerWidth;
@@ -16,6 +17,9 @@ function App() {
     if(newtitle==="Messages"){
       setMainArea(<Messages />)
     }
+    else if(newtitle==="Notifications"){
+      setMainArea(<DisplayNotification />)
+    }
     else{
       setMainArea(<Main />)
     }
@@ -25,7 +29,7 @@ function App() {
     return (
       <div className="App">
         <LeftSidebar />
-        <Main />
+        <Main title={title} />
         <RightSideBar />
         <Messages />  
       </div>

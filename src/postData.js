@@ -2,7 +2,7 @@ export default {
         "data": [
             {
                 "id": "1",
-                "authorName": "Gagan Preet 👩‍💻",
+                "authorName": "Gagan Preet",
                 "authorProfile": "@i_gaganpreet",
                 "authorImg":"https://pbs.twimg.com/profile_images/1256670915280109570/gk9afxJs_400x400.jpg",
                 "postContent":"✨Worked on the layout of the Twitter clone👩‍💻👩‍💻 And I love the way it is turning out to be❤",
@@ -25,8 +25,8 @@ export default {
                 "imageUrl":""
             },
             {
-                "id": "1",
-                "authorName": "Gagan Preet 👩‍💻",
+                "id": "3",
+                "authorName": "Gagan Preet",
                 "authorProfile": "@i_gaganpreet",
                 "authorImg":"https://pbs.twimg.com/profile_images/1256670915280109570/gk9afxJs_400x400.jpg",
                 "postContent":"✨Worked on the layout of the Twitter clone👩‍💻👩‍💻 And I love the way it is turning out to be❤",
@@ -37,7 +37,7 @@ export default {
                 "imageUrl":"https://pbs.twimg.com/media/FVAX_-yaQAAn1qQ?format=jpg&name=large"
             },
             {
-                "id": "2",
+                "id": "4",
                 "authorName": "Aman",
                 "authorProfile": "@Aman",
                 "authorImg":"https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",
@@ -49,8 +49,8 @@ export default {
                 "imageUrl":""
             },
             {
-                "id": "1",
-                "authorName": "Gagan Preet 👩‍💻",
+                "id": "5",
+                "authorName": "Gagan Preet",
                 "authorProfile": "@i_gaganpreet",
                 "authorImg":"https://pbs.twimg.com/profile_images/1256670915280109570/gk9afxJs_400x400.jpg",
                 "postContent":"✨Worked on the layout of the Twitter clone👩‍💻👩‍💻 And I love the way it is turning out to be❤",
@@ -61,7 +61,7 @@ export default {
                 "imageUrl":"https://pbs.twimg.com/media/FVAX_-yaQAAn1qQ?format=jpg&name=large"
             },
             {
-                "id": "2",
+                "id": "6",
                 "authorName": "Aman",
                 "authorProfile": "@Aman",
                 "authorImg":"https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80",

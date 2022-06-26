@@ -18,7 +18,25 @@ body{
     display: grid;
     grid-template-columns: 23% 45% 32% ;
 }
-
+.Header{
+    height: 1.6em;
+    width: calc(100% - 40px);
+    display: flex;
+    padding:0px 20px 10px 20px;
+    background-color: white;
+}
+.Header>img{
+    height: 100%;
+    width: calc(height);
+}
+.Header>h5{
+    margin:0;
+    padding:10px 0;
+    align-self: center;
+}
+.Header > .sparkleIcon{
+    margin-left: auto;
+}
 .Messages{
     position:fixed;
     width: 30%;
@@ -143,8 +161,8 @@ body{
     border-right: 1px solid rgb(239,243,244);
 }
 .MyPost{
-    border: 1px solid rgb(239,243,244);
-    padding:10px 20px 0 20px;
+    border-bottom: 1px solid rgb(239,243,244);
+    padding:0px 20px;
 }
 .tweetButtonPost{
     
@@ -291,7 +309,7 @@ input::placeholder{
 .DisplayUserPosts{
     display: grid;
     border-bottom: 1px solid rgb(239,243,244);
-    padding:10px 20px 0 20px;
+    padding:10px 10px 0 10px;
     width: 100%;
 }
 .DisplayUserPosts:hover{
@@ -581,15 +599,67 @@ input::placeholder{
     margin:0;
     padding:0 10px;
 }
-
-
-
-
+.DisplayNotification{
+    border-right: 1px solid rgb(239,243,244);
+}
+.AllNotifications{
+    display:flex;
+    flex-direction: row;
+    padding:20px 50px 20px 20px;
+    border-bottom: 1px solid rgb(239,243,244);
+}
+.AllNotifications>span{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    padding-left:10px;
+}
+.AllNotificationsIcon{
+    height: 40px;
+    width: 40px;
+}
+.heartIcon{
+    color:#F91880;
+}
+.userIcon{
+    color:#1D9BF0;
+}
+.retweetedIcon{
+    color:#00BA7C;
+}
+.postAction{
+    margin:0;
+    font-size: 0.7em;
+    width: max-content;
+}
+.tweetData{
+    margin:0;
+    font-size: 0.7em;
+    color:#5B6B78;
+    white-space: pre-wrap;
+}
+.notificationType{
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: center;
+    border-bottom: 1px solid rgb(239,243,244);
+}
+.notificationType>h6{
+    margin:0;
+    margin-left:1em;
+    align-self: center;
+    padding: 20px;
+    /* border-bottom: 1px solid red; */
+    border-width: 10px;
+}
+.notificationType>h6>.active{
+    border-bottom: 5px solid #1D9BF0;
+    padding: 15px;
+}
 
 
 @media screen and (max-width: 480px) {
     body {
-      /* background-color: lightgreen; */
     width: 100%;
     }
 
@@ -597,31 +667,20 @@ input::placeholder{
         display: grid;
         grid-template-rows: 4% 92% 4% ;
         overflow-x: hidden;
-        /* width: 100%; */
     }
     .Header{
         position: absolute;
         top:0;
         height: 4%;
-        width: calc(100% - 40px);
-        display: flex;
         padding:10px 20px;
-        background-color: white;
         border-bottom: 1px solid rgb(239,243,244);
 
     }
-    .Header>img{
-        height: 100%;
-        width: calc(height);
-    }
     .Header>h5{
-        margin:0;
+        padding:0;
         margin-left:1em;
-        align-self: center;
     }
-    .Header > .sparkleIcon{
-margin-left: auto;
-    }
+    
     .Footer{
         position: fixed;
         bottom:0;
@@ -636,6 +695,7 @@ margin-left: auto;
     }
     .Main{
         margin-top: 70%;
+        margin-bottom:70%;
     }
     .DisplayUserPosts{
         padding:10px 10px 0 20px;
@@ -648,10 +708,28 @@ margin-left: auto;
         box-shadow: none;
         padding: 10px;
         margin-top:70%;
+        margin-bottom:70%;
         border-radius: none;
-        background-color: #FFFFFF;
-        display: flex;
-        flex-direction: column;
-        overflow-x: hidden;
+        padding:20px 50px 20px 20px;
     }
+    .authorName,
+    .authorProfile,
+    .profileInfoDots,
+    .postTime{
+    margin-right: 0.1em;
+    
+    }
+    .MessageExpand{
+        padding:20px 10px;
+    }
+
+    .DisplayNotification{
+        margin-top:70%;
+        margin-bottom:70%;
+        border-right: 1px solid rgb(239,243,244);
+        width:100vw;
+    }
+
+
+    
   }
