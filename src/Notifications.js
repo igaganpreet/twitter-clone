@@ -4,7 +4,7 @@ import NotificationData from "./NotificationData"
 
 
 
-export default function DisplayNotification() {
+export default function Notifications() {
 let info=NotificationData.data
 let AllNotificationData=info.map((data)=>{
     return(
@@ -24,7 +24,7 @@ function addActiveClass(event){
 }
 
     return (
-      <main className="DisplayNotification">
+      <main className="Notifications">
         <div className="notificationType">
           <h6><a className="active all" onClick={addActiveClass}>All</a></h6>
           <h6><a onClick={addActiveClass}>Mentions</a></h6>

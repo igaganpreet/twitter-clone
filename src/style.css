@@ -19,24 +19,23 @@ body{
     grid-template-columns: 23% 45% 32% ;
 }
 .Header{
-    height: 1.6em;
+    height:2.1em;
     width: calc(100% - 40px);
     display: flex;
+    justify-content: space-between;
     padding:0px 20px 10px 20px;
     background-color: white;
 }
-.Header>img{
+.headerImg{
     height: 100%;
     width: calc(height);
 }
-.Header>h5{
+.headerTitle{
     margin:0;
     padding:10px 0;
     align-self: center;
 }
-.Header > .sparkleIcon{
-    margin-left: auto;
-}
+
 .Messages{
     position:fixed;
     width: 30%;
@@ -186,6 +185,15 @@ body{
     padding: 10px;
     border-radius: 50%;
 }
+.settingsIcon{
+    font-size: 0.9em;
+    padding: 10px;
+    border-radius: 50%;
+}
+.settingsIcon:hover{
+    background-color:#E7E7E8;
+    cursor: pointer;
+}
 .sparkleIcon:hover{
     background-color:#E7E7E8;
     cursor: pointer;
@@ -269,12 +277,13 @@ body{
 }
 .RightSideBar{
     border-left: 1px solid rgb(239,243,244);
-    padding:8px 45px 0 30px;
+    padding:0px 45px 0 30px;
 }
-.search{
+.SearchBar{
+    margin-top: 10px;
     width: 95%;
     background-color: #EFF3F4;
-    padding: 8px 15px ;
+    padding: 6px 15px ;
     border-radius: 30px;
     display: flex;
     align-items: center;
@@ -599,7 +608,7 @@ input::placeholder{
     margin:0;
     padding:0 10px;
 }
-.DisplayNotification{
+.Notifications{
     border-right: 1px solid rgb(239,243,244);
 }
 .AllNotifications{
@@ -648,13 +657,31 @@ input::placeholder{
     margin:0;
     margin-left:1em;
     align-self: center;
-    padding: 20px;
-    /* border-bottom: 1px solid red; */
+    padding: 12px;
     border-width: 10px;
 }
 .notificationType>h6>.active{
     border-bottom: 5px solid #1D9BF0;
-    padding: 15px;
+    padding: 7px;
+}
+.Header .SearchBar{
+    width:70%;
+}
+.Explore{
+    /* border: 1px solid red; */
+    
+}
+.exploreCategories{
+    list-style:none;
+    margin: 10px 0;
+    padding: 0;
+    display: flex;
+    border-bottom: 1px solid rgb(239,243,244);
+    justify-content: space-evenly;
+}
+.categories{
+    font-size: 0.8em;
+    color:#5B6B78;
 }
 
 

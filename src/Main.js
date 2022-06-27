@@ -1,9 +1,6 @@
 import MyPost from "./MyPost";
 import DisplayUserPosts from "./DisplayUserPosts"
 import postData from "./postData";
-import {HiOutlineSparkles} from "react-icons/hi"
-import Header from "./Header";
-import DisplayNotification from "./DisplayNotification";
 
 
 export default function Main(props) {
@@ -27,10 +24,7 @@ let width = window.innerWidth;
 if(width>480){
   return (
     <main className="Main">
-      {/* <Header title={props.title} /> */}
-      {/* <MyPost /> */}
-      <Header title="Notifications" />
-      <DisplayNotification />
+      <MyPost />
       {display}
     </main>
   )

@@ -14,7 +14,7 @@ import React from "react"
 
 
 
-export default function LeftSidebar() {
+export default function LeftSidebar(props) {
 
   const [LinksArr, setLinksArr]=React.useState([
     {
@@ -32,7 +32,7 @@ export default function LeftSidebar() {
     {
       id:nanoid(),
       logo:<VscBell />,
-      title:"Notification",
+      title:"Notifications",
       isSelected:false
     },
     {
@@ -68,19 +68,14 @@ export default function LeftSidebar() {
     
   ])
 
-const [displayLinkList,setDisplayLinkList]=React.useState(setLinkEl(LinksArr))
-
-    function setLinkEl(arr){
-     return(arr.map(
+let displayLinkList=LinksArr.map(
         item=> 
               <LeftSideBarLinks title={item.title} 
               logo={item.logo} 
               isSelected={item.isSelected}
               key={item.id}
-              clicked={linkClicked} />
+              updateTitle={props.updateTitle} />
               )
-     )
-    }
  function linkClicked()
 {
   console.log("clicked")
