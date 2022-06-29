@@ -10,6 +10,7 @@ export default function Header(props) {
   if(props.title==="Explore"){
     return(
       <header className="Header">
+        {displayImg}
         <SearchBar />
         {icon}
       </header>

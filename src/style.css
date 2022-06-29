@@ -13,7 +13,10 @@ body{
     user-select:none;
     background-color: white;
 }
-
+h1, h2, h3, h4, h5, h6, p{
+    margin:0;
+    padding:0;
+}
 .App{
     display: grid;
     grid-template-columns: 23% 45% 32% ;
@@ -660,16 +663,12 @@ input::placeholder{
     padding: 12px;
     border-width: 10px;
 }
-.notificationType>h6>.active{
+.active{
     border-bottom: 5px solid #1D9BF0;
     padding: 7px;
 }
 .Header .SearchBar{
     width:70%;
-}
-.Explore{
-    /* border: 1px solid red; */
-    
 }
 .exploreCategories{
     list-style:none;
@@ -684,6 +683,39 @@ input::placeholder{
     color:#5B6B78;
     margin: 15px 0;
 }
+.exploreImg{
+    height: 40vh;
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1566312922674-e02730f7b912?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80);
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: flex;
+}
+.exporeImgContent{
+    color:white; 
+    padding:20px;
+    margin-top: auto;
+}
+.imgHeading{
+    justify-content: space-evenly;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.imgType{
+    display: flex;
+}
+.imgDate,
+.imgInfo{
+    font-size: 0.7em;
+    font-weight: 300;
+}
+.imgCategory{
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+
+
 
 
 @media screen and (max-width: 480px) {
@@ -701,8 +733,6 @@ input::placeholder{
         top:0;
         height: 4%;
         padding:10px 20px;
-        border-bottom: 1px solid rgb(239,243,244);
-
     }
     .Header>h5{
         padding:0;
@@ -756,14 +786,16 @@ input::placeholder{
         margin-bottom:70%;
         width:100vw;
     }
-
+    .SearchBar{
+        height: 80%;
+        margin-top: 5px;
+    }
+    .Header .SearchBar{
+        width:60%;
+    }
     .Explore{
         margin-top:70%;
         margin-bottom: 70%;
-        border:1px solid red;
-        margin-top:70%;
-        margin-bottom:70%;
-        border-right: 1px solid rgb(239,243,244);
         width:100vw;
     }
     .exploreCategories{
@@ -773,11 +805,14 @@ input::placeholder{
         display: flex;
         border-bottom: 1px solid rgb(239,243,244);
         justify-content: space-evenly;
+        width: 150%;
     }
     .categories{
         font-size: 0.7em;
         color:#5B6B78;
         margin: 15px 0;
     }
-    
+    .exploreImg{
+        height: 30vh;
+    }
   }
