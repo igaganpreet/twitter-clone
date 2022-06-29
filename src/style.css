@@ -673,15 +673,16 @@ input::placeholder{
 }
 .exploreCategories{
     list-style:none;
-    margin: 10px 0;
     padding: 0;
+    margin: 0;;
     display: flex;
     border-bottom: 1px solid rgb(239,243,244);
     justify-content: space-evenly;
 }
 .categories{
-    font-size: 0.8em;
+    font-size: 0.7em;
     color:#5B6B78;
+    margin: 15px 0;
 }
 
 
@@ -750,13 +751,33 @@ input::placeholder{
         padding:20px 10px;
     }
 
-    .DisplayNotification{
+    .Notifications{
+        margin-top:70%;
+        margin-bottom:70%;
+        width:100vw;
+    }
+
+    .Explore{
+        margin-top:70%;
+        margin-bottom: 70%;
+        border:1px solid red;
         margin-top:70%;
         margin-bottom:70%;
         border-right: 1px solid rgb(239,243,244);
         width:100vw;
     }
-
-
+    .exploreCategories{
+        list-style:none;
+        padding: 0;
+        margin: 0;;
+        display: flex;
+        border-bottom: 1px solid rgb(239,243,244);
+        justify-content: space-evenly;
+    }
+    .categories{
+        font-size: 0.7em;
+        color:#5B6B78;
+        margin: 15px 0;
+    }
     
   }
