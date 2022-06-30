@@ -85,14 +85,14 @@ let displayLinkList=LinksArr.map(
         <span><FaTwitter className="twitterIcon" /></span>
         {displayLinkList}
         <button className="tweetButtonLeftSideBar">Tweet</button>
-        <div className="profileInfo"> 
+        {/* <div className="profileInfo"> 
           <DisplayProfile 
             image="https://pbs.twimg.com/profile_images/1423650543382142985/dCDFouI1_400x400.jpg"
             name="Baljeet Singh"
             userId="@yetanotherdev_"
           />
           <BiDotsHorizontalRounded className="profileInfoDots"/>
-        </div>
+        </div> */}
       </section>
     );
   }

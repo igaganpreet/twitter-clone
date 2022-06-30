@@ -21,6 +21,7 @@ export default function WhatsHappening() {
       <div className="WhatsHappening">
         <h5>What's happening</h5>
         {displayWH}
+        <h6 className="showMore">Show more</h6>
       </div>
     );
   }

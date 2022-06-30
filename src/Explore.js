@@ -1,5 +1,21 @@
+import ExploreData from "./ExploreData"
+import {BiDotsHorizontalRounded} from "react-icons/bi"
 
 export default function Explore(props) {
+let data=ExploreData.data
+let displayExploreContent=data.map((items)=>{
+  return( 
+    <div className="displayExploreContent">
+      <div className="exploreContent">
+      <h6 className="exploreInfo">{items.info}</h6>
+      <h5 className="exploreInfoTitle">{items.title}</h5>
+      <h6 className="exploreInfoNumber">{items.number}</h6>
+      </div>
+      {items.img?<img className="exploreContentImg" src={items.img}></img>:<BiDotsHorizontalRounded className="infoDotsIcon"/>}  
+    </div>
+    )
+  }
+)
 
 
     return (
@@ -23,14 +39,7 @@ export default function Explore(props) {
           <h6 className="imgInfo">Trending with #eoinmorgan</h6>
         </div>
       </div>
-      <div>
-        {/* <h6>category</h6>
-        <h5>title</h5>
-        <h6>info</h6>
-        <img></img> */}
-      </div>
-
-
+      {displayExploreContent}
       </main>
     )
   }

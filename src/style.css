@@ -34,7 +34,6 @@ h1, h2, h3, h4, h5, h6, p{
     width: calc(height);
 }
 .headerTitle{
-    margin:0;
     padding:10px 0;
     align-self: center;
 }
@@ -61,7 +60,6 @@ h1, h2, h3, h4, h5, h6, p{
     cursor: pointer;
 }
 .messageInner>p{
-    margin:0;
     padding: 15px;
     width: max-content;   
 }
@@ -95,7 +93,6 @@ h1, h2, h3, h4, h5, h6, p{
 }
 .LeftSideBarLinks h3{
     font-size: 0.9em;
-    margin:0;
     margin-left: 20px;
 }
 .twitterIcon{
@@ -149,12 +146,10 @@ h1, h2, h3, h4, h5, h6, p{
     align-self: center;
 }
 .profileName{
-    margin:0;
     font-size: 0.7em;
     width: max-content;
 }
 .profileId{
-    margin:0;
     font-size: 0.6em;
     color:#5B6B78;
     width: max-content;
@@ -346,7 +341,6 @@ input::placeholder{
 .profileInfoDots,
 .postTime{
     align-self:top;
-    margin:0;
     margin-right: 0.5em;
     
 }
@@ -354,7 +348,6 @@ input::placeholder{
     grid-column: 2/ span 8;
     grid-row: 2;
     padding-left: 10px;
-    margin:0;
     font-size: 0.7em;
     max-width: 100%;
 }
@@ -446,7 +439,6 @@ input::placeholder{
 .dwhInfo,
 .dwhTitle,
 .dwhAdditionalInfo{
-    margin: 0;
     padding: 3px;
 }
 
@@ -507,7 +499,6 @@ input::placeholder{
     padding-right: 20px;
 }
 .popup-top>h5{
-    margin: 0;
     margin-left: 7%;
     align-self: center;
 }
@@ -608,7 +599,6 @@ input::placeholder{
 .MessageExpandMsg{
     grid-row:2;
     grid-column: 2 / span 100;
-    margin:0;
     padding:0 10px;
 }
 .Notifications{
@@ -645,7 +635,6 @@ input::placeholder{
     width: max-content;
 }
 .tweetData{
-    margin:0;
     font-size: 0.7em;
     color:#5B6B78;
     white-space: pre-wrap;
@@ -673,7 +662,7 @@ input::placeholder{
 .exploreCategories{
     list-style:none;
     padding: 0;
-    margin: 0;;
+    margin: 0;
     display: flex;
     border-bottom: 1px solid rgb(239,243,244);
     justify-content: space-evenly;
@@ -705,17 +694,50 @@ input::placeholder{
     display: flex;
 }
 .imgDate,
-.imgInfo{
+.imgInfo,
+.exploreInfoNumber
+{
     font-size: 0.7em;
     font-weight: 300;
 }
-.imgCategory{
+.imgCategory
+{
     font-size: 0.7em;
     font-weight: 500;
 }
+.exploreContent{
+    padding:15px 0;
+}
+.exploreInfo{
+    font-size: 0.7em;
+    font-weight: 500;
+}
+.exploreInfo,
+.exploreInfoNumber
+{
+    color: #536471;
+}
+.exploreInfoTitle{
+    font-size: 0.7em;
+    font-weight: 600;
+}
+.displayExploreContent{
+    display: flex;
+    padding:0 20px;
+}
 
-
-
+.infoDotsIcon{
+    color:#50575c;
+    padding-right: 20px;
+    margin-left: auto;
+    margin-top: 0.7em;
+}
+.exploreContentImg{
+    height:3em;
+    width:3em;
+    border-radius:10px;
+    margin-left: auto;
+}
 
 
 @media screen and (max-width: 480px) {
