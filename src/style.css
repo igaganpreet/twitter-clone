@@ -29,6 +29,16 @@ h1, h2, h3, h4, h5, h6, p{
     padding:0px 20px 10px 20px;
     background-color: white;
 }
+.HeaderBookmarks{
+    display: flex;
+    flex-direction: column;
+}
+.HeaderBookmarks h6{
+    font-size: 0.55em;
+    font-weight: 300;    
+    color: #536471;
+    margin-top: -10px;
+}
 .headerImg{
     height: 100%;
     width: calc(height);
@@ -121,11 +131,13 @@ h1, h2, h3, h4, h5, h6, p{
     cursor: pointer;
     background-color: #1A8CD8;
 }
-
+.LeftSideBar .profileInfo{
+    padding: 15px 20px 15px 20px;
+}
 .profileInfo{
     display: flex;
     margin-top:15px;
-    padding: 15px 20px 15px 20px;
+    padding: 5px 0;
 }
 .displayProfile{
     display: grid;
@@ -300,14 +312,17 @@ input::placeholder{
     font-size: 0.8em;
     margin-right: 20px;
 }
-.WhatsHappening{
-    height: 100%;
+.WhatsHappening,
+.WhoToFollow
+{
+    height:max-content;
     width: 100%;
     margin-top: 20px;
     background-color: #F7F9F9;
     border-radius: 30px;
     padding-left: 20px;
 }
+.WhoToFollow h5,
 .WhatsHappening h5{
     padding-top:20px;
 }
@@ -738,6 +753,39 @@ input::placeholder{
     border-radius:10px;
     margin-left: auto;
 }
+.showMore{
+    font-size: 0.65em;
+    font-weight: 500;
+    color:#1D9BF0;
+    padding: 20px 0 ;
+}
+.followButton{
+    background-color: #272C30; 
+    color:white;
+    border: none;
+    padding:10px 20px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 0.6em;
+    margin-right: 20px;
+    margin-left: auto;
+}
+
+.rightsidebarFooter{
+    padding-left: 1em;
+    padding-right: 2.2em;
+}
+.rightsidebarFooter p{
+    line-height: 0.7em;
+}
+.rightsidebarFooter p a{
+    padding-right: 0.4em;
+    font-size: 0.55em;
+    font-weight: 400;    
+    color: #536471;
+    
+}
+
 
 
 @media screen and (max-width: 480px) {

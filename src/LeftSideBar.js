@@ -1,14 +1,15 @@
 import LeftSideBarLinks from "./LeftSideBarLinks"
 import DisplayProfile from "./DisplayProfile"
 import { nanoid } from "nanoid"
-import { FaTwitter } from "react-icons/fa"
-import {AiOutlineHome, AiOutlineUser} from "react-icons/ai"
+import { FaTwitter,FaHashtag } from "react-icons/fa"
+import {AiOutlineHome, AiOutlineUser, AiFillHome} from "react-icons/ai"
 import {BiHash, BiDotsHorizontalRounded} from "react-icons/bi"
 import {VscBell} from "react-icons/vsc"
+import {BsBellFill, BsFillBookmarkFill} from "react-icons/bs"
 import {FiMail} from "react-icons/fi"
 import {BsBookmark} from "react-icons/bs"
-import {RiFileList2Line} from "react-icons/ri"
-import {HiOutlineDotsCircleHorizontal} from "react-icons/hi"
+import {RiFileList2Line, RiFileList2Fill, RiUser3Fill} from "react-icons/ri"
+import {HiOutlineDotsCircleHorizontal, HiMail} from "react-icons/hi"
 import React from "react"
 
 
@@ -16,83 +17,95 @@ import React from "react"
 
 export default function LeftSidebar(props) {
 
-  const [LinksArr, setLinksArr]=React.useState([
+  const LinksArr=
+    [{
+        id:nanoid(),
+        logoOutline:<AiOutlineHome />,
+        logoFill:<AiFillHome />,
+        title:"Home"
+    },
     {
         id:nanoid(),
-        logo:<AiOutlineHome />,
-        title:"Home",
-        isSelected:true
-    },
-    {
-        id:nanoid(),
-        logo:<BiHash />,
-        title:"Explore",
-        isSelected:false
+        logoOutline:<BiHash />,
+        logoFill:<FaHashtag />,
+        title:"Explore"
     },
     {
       id:nanoid(),
-      logo:<VscBell />,
-      title:"Notifications",
-      isSelected:false
+      logoOutline:<VscBell />,
+      logoFill:<BsBellFill />,
+      title:"Notifications"
     },
     {
       id:nanoid(),
-      logo:<FiMail />,
-      title:"Messages",
-      isSelected:false
+      logoOutline:<FiMail />,
+      logoFill:<HiMail />,
+      title:"Messages"
     },
     {
       id:nanoid(),
-      logo:<BsBookmark />,
-      title:"Bookmarks",
-      isSelected:false
+      logoOutline:<BsBookmark />,
+      logoFill:<BsFillBookmarkFill />,
+      title:"Bookmarks"
     },
     {
       id:nanoid(),
-      logo:<RiFileList2Line />,
-      title:"Lists",
-      isSelected:false
+      logoOutline:<RiFileList2Line />,
+      logoFill:<RiFileList2Fill />,
+      title:"Lists"
     },
     {
       id:nanoid(),
-      logo:<AiOutlineUser />,
-      title:"Profile",
-      isSelected:false
+      logoOutline:<AiOutlineUser />,
+      logoFill:<RiUser3Fill />,
+      title:"Profile"
     },
     {
       id:nanoid(),
-      logo:<HiOutlineDotsCircleHorizontal />,
-      title:"More",
-      isSelected:false
+      logoOutline:<HiOutlineDotsCircleHorizontal />,
+      logoFill:<HiOutlineDotsCircleHorizontal />,
+      title:"More"
     }
-    
-  ])
+  ]
 
-let displayLinkList=LinksArr.map(
-        item=> 
-              <LeftSideBarLinks title={item.title} 
-              logo={item.logo} 
-              isSelected={item.isSelected}
-              key={item.id}
-              updateTitle={props.updateTitle} />
-              )
- function linkClicked()
-{
-  console.log("clicked")
+let displayLinkList=LinksArr.map((item)=>{
+  if(props.title===item.title){
+    return (
+      <LeftSideBarLinks title={item.title} 
+            logo={item.logoFill} 
+            isSelected={item.isSelected}
+            key={item.id}
+            updateTitle={props.updateTitle}
+            setStyle={{"font-weight": "600"}} />
+)
+  }
+  else{
+    return (
+      <LeftSideBarLinks title={item.title} 
+            logo={item.logoOutline} 
+            isSelected={item.isSelected}
+            key={item.id}
+            updateTitle={props.updateTitle}
+            setStyle={{"font-weight": "300"}} />
+)
+  }
+  
 } 
+)
+
     return (
       <section className="LeftSideBar">
         <span><FaTwitter className="twitterIcon" /></span>
         {displayLinkList}
         <button className="tweetButtonLeftSideBar">Tweet</button>
-        {/* <div className="profileInfo"> 
+        <div className="profileInfo"> 
           <DisplayProfile 
             image="https://pbs.twimg.com/profile_images/1423650543382142985/dCDFouI1_400x400.jpg"
             name="Baljeet Singh"
             userId="@yetanotherdev_"
           />
           <BiDotsHorizontalRounded className="profileInfoDots"/>
-        </div> */}
+        </div>
       </section>
     );
   }

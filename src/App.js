@@ -33,7 +33,7 @@ function App() {
   if(width>480){
     return (
       <div className="App">
-        <LeftSidebar updateTitle={updateTitle} />
+        <LeftSidebar title={title} updateTitle={updateTitle} />
         <div>
           <Header title={title} />
           {mainArea}

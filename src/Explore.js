@@ -3,6 +3,8 @@ import {BiDotsHorizontalRounded} from "react-icons/bi"
 
 export default function Explore(props) {
 let data=ExploreData.data
+let categories=["For you","COVID-19","Trending","News","Sports","Entertainment"]
+
 let displayExploreContent=data.map((items)=>{
   return( 
     <div className="displayExploreContent">
@@ -16,17 +18,17 @@ let displayExploreContent=data.map((items)=>{
     )
   }
 )
+let displayCategories=categories.map((item)=>{
+  return(   
+      <li className="categories"><a>{item}</a></li>
+  )
+})
 
 
     return (
       <main className="Explore">
         <ul className="exploreCategories">
-          <li className="categories"><a className="active">For you</a></li>
-          <li className="categories">COVID-19</li>
-          <li className="categories">Trending</li>
-          <li className="categories">News</li>
-          <li className="categories">Sports</li>
-          <li className="categories">Entertainment</li>
+          {displayCategories}
         </ul>
 
       <div className="exploreImg">

@@ -1,7 +1,7 @@
 import SearchBar from "./Searchbar"
 import {HiOutlineSparkles} from "react-icons/hi"
 import {FiSettings} from "react-icons/fi"
-
+import {BiDotsHorizontalRounded} from "react-icons/bi"
 
 export default function Header(props) {
   let width = window.innerWidth
@@ -13,6 +13,18 @@ export default function Header(props) {
         {displayImg}
         <SearchBar />
         {icon}
+      </header>
+    )
+  }  
+  if(props.title==="Bookmarks"){
+    return(
+      <header className="Header">
+        {displayImg}
+        <div className="HeaderBookmarks" >
+          <h5 className="headerTitle">{props.title}</h5>
+          <h6>@yetanotherdev_</h6>
+        </div>
+        <BiDotsHorizontalRounded className="profileInfoDots"/>
       </header>
     )
   }  
